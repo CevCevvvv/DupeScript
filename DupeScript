@@ -59,11 +59,12 @@ end
 
 gui:Destroy()
 
--- Duplicate tool
-local backpack = player:WaitForChild("Backpack")
-local toolName = "YourToolNameHere" -- Replace with your tool's name
 
+
+local backpack = player:WaitForChild("Backpack")
+local toolName = "Chicken Zombie"
 local originalTool = backpack:FindFirstChild(toolName)
+
 if not originalTool then
     warn("Tool not found!")
     return
@@ -73,7 +74,7 @@ local fakeTool = originalTool:Clone()
 fakeTool.Name = originalTool.Name .. "_Dupe"
 fakeTool.Parent = backpack
 
--- Notify user
+
 pcall(function()
     StarterGui:SetCore("SendNotification", {
         Title = "Duplication Complete",
